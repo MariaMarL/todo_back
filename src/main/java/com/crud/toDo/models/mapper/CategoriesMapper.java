@@ -12,11 +12,11 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses={ToDoMapper.class})
 public interface CategoriesMapper {
 
-    @Mappings({
+    /*@Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "categoryName", target = "categoryName"),
             @Mapping(source = "toDoList", target = "toDoList")
-    })
+    })*/
     CategoriesDto toCategoriesDto(Categories categories);
     List<CategoriesDto> toCategoriesDto(List<Categories> categories);
 

@@ -37,7 +37,7 @@ public class CategoriesService implements CategoriesServiceInterface{
 
     @Override
     public CategoriesDto getIdDto(Long id) {
-        Categories categories =  categoryRepository.findById(id).orElseThrow();
+        Categories categories =  categoryRepository.findById(id).get();
         return categoriesMapper.toCategoriesDto(categories);
     }
 }

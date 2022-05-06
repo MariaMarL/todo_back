@@ -13,12 +13,12 @@ import java.util.List;
 @Mapper(componentModel= "spring")
 public interface ToDoMapper {
 
-    @Mappings({
+    /*@Mappings({
             @Mapping(source="id", target="id"),
             @Mapping(source="task", target="task"),
             @Mapping(source = "done", target="done"),
             @Mapping(source="fkCategoryId", target="fkCategoryId"),
-    })
+    })*/
     ToDoDto toToDoDto(ToDo toDo);         // de ToDo a ToDoDto
     List<ToDoDto> toToDoDtos(List<ToDo> toDo);
 

@@ -1,12 +1,13 @@
 package com.crud.toDo.models.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoriesDto {
 
     private Long id;;
-    private String categoryName;;
-    private List<ToDoDto> toDoList;
+    private String categoryName;
+    private List<ToDoDto> toDoList = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -16,19 +17,19 @@ public class CategoriesDto {
         this.id = id;
     }
 
-    public String getName() {
+    public String getCategoryName() {
         return categoryName;
     }
 
-    public void setName(String name) {
-        this.categoryName = name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public List<ToDoDto> getListOfToDo() {
+    public List<ToDoDto> getToDoList() {
         return toDoList;
     }
 
-    public void setListOfToDo(List<ToDoDto> listOfToDo) {
-        toDoList = listOfToDo;
+    public void setToDoList(List<ToDoDto> toDoList) {
+        this.toDoList = toDoList;
     }
 }

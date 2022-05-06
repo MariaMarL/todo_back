@@ -38,7 +38,7 @@ public class ToDoService implements ToDoServiceInterface{
 
     @Override
     public ToDoDto getToDoIdDto(Long id) {
-        ToDo toDo = toDoRepository.findById(id).orElseThrow();
+        ToDo toDo = toDoRepository.findById(id).get();
         return toDoMapper.toToDoDto(toDo);
     }
 }
