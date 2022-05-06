@@ -30,9 +30,9 @@ public class ToDoController {
    public ToDoDto update(@RequestBody ToDoDto toDoDto){
        if(toDoDto.getId() != null){
            return toDoServiceInterface.saveToDo(toDoDto);
+       }else {
+           throw new RuntimeException("This toDo doesn't exist");
        }
-       throw new RuntimeException("This toDo doesn't exist");
-
    }
 
    @DeleteMapping("delete/todo/{id}")
