@@ -8,29 +8,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api/categories")
 @CrossOrigin(origins = "http://localhost:3000/")
 public class CateogoriesController {
 
     @Autowired
     private CategoriesServiceInterface categoriesSI;
 
-    @GetMapping(value = "get/categories")
+    @GetMapping
     public List<CategoriesDto> getCategories(){
         return categoriesSI.list();
     }
 
-    @PostMapping(value = "post/categories")
+    @PostMapping
     public CategoriesDto saveCategories(@RequestBody CategoriesDto categoriesDto){
         return categoriesSI.save(categoriesDto);
     }
 
-    @DeleteMapping(value = "delete/categories/{id}")
+    @DeleteMapping("/{id}")
     public void deleteCategories(@PathVariable Long id){
         categoriesSI.delete(id);
     }
 
-    @GetMapping(value = "delete/categories/{id}")
+    @GetMapping
     public CategoriesDto getCategories(@PathVariable Long id){
         return categoriesSI.getIdDto(id);
     }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/")                            //the url when we execute the request.
+@RequestMapping("api/todo")                            //the url when we execute the request.
 @CrossOrigin(origins = "http://localhost:3000/")   //tell that accepts request from a fronted app; tell that it will be an origin localed in the localhost.
 public class ToDoController {
 
@@ -16,17 +16,17 @@ public class ToDoController {
     private ToDoServiceInterface toDoServiceInterface;
 
 
-    @GetMapping (value = "get/todos")
+    @GetMapping
     public List<ToDoDto> getToDos(){
         return toDoServiceInterface.getToDos();
     }
 
-    @PostMapping(value = "save/todo")
+    @PostMapping
     public ToDoDto save(@RequestBody ToDoDto toDoDto){
         return toDoServiceInterface.saveToDo(toDoDto);
     }
 
-   @PutMapping(value = "put/todo")
+   @PutMapping
    public ToDoDto update(@RequestBody ToDoDto toDoDto){
        if(toDoDto.getId() != null){
            return toDoServiceInterface.saveToDo(toDoDto);
@@ -35,12 +35,12 @@ public class ToDoController {
        }
    }
 
-   @DeleteMapping("delete/todo/{id}")
+   @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         toDoServiceInterface.deleteToDo(id);
    }
 
-   @GetMapping(value = "/todo/{id}")
+   @GetMapping
     public ToDoDto getTodo(@PathVariable Long id){
         return toDoServiceInterface.getToDoIdDto(id);
    }
