@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/categories")
+@RequestMapping("api/category")
 @CrossOrigin(origins = "http://localhost:3000/")
 public class CateogoriesController {
 
@@ -30,8 +30,8 @@ public class CateogoriesController {
         categoriesSI.delete(id);
     }
 
-    @GetMapping
-    public CategoriesDto getCategories(@PathVariable Long id){
-        return categoriesSI.getIdDto(id);
-    }
+  //  @GetMapping
+  //  public CategoriesDto getCategories(@PathVariable Long id){
+  //      return categoriesSI.getIdDto(id);
+  //  }
 }

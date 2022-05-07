@@ -13,7 +13,7 @@ public class Categories {
     private Long id;
     private String categoryName;;
 
-    @OneToMany(mappedBy = "fkCategoryId")           //delete orphaned entities from the database. An entity that is no longer attached to its parent
+    @OneToMany(mappedBy = "fkCategoryId", orphanRemoval = true)           //delete orphaned entities from the database. An entity that is no longer attached to its parent
     //@JoinColumn(name = "categoryId")        //This annotation helps us specify the column we'll use for joining an entity association or element collection
     private List<ToDo> toDoList = new ArrayList<>();
 
