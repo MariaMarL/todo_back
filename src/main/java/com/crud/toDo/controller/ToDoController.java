@@ -33,12 +33,13 @@ public class ToDoController {
     }
 
    @PutMapping
-   public ToDoDto update(@RequestBody ToDoDto toDoDto){
+   public List<CategoriesDto> update(@RequestBody ToDoDto toDoDto){
        if(toDoDto.getId() != null){
-           return toDoServiceInterface.saveToDo(toDoDto);
+           toDoServiceInterface.saveToDo(toDoDto);
        }else {
            throw new RuntimeException("This toDo doesn't exist");
        }
+       return categoriesServiceInterface.list();
    }
 
    @DeleteMapping("/{id}")
